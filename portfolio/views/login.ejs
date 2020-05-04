@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title><%= title %></title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+
+    <body>
+        <div class="wrapper">
+            
+            <header class="header">
+                <h1 class="headline"><a href="/record">MONKEY LIFT</a></h1>
+            </header>
+            
+                <div class="main" role="main">
+                    <h2><%= title %></h2>
+                    <p><%- content %></p>
+                    <form method="post" action="/login">
+                        <table>
+                            <tr>
+                                <th>NAME</th>
+                                <td><input type="text" name="name" value="<%= form.name %>"></td>
+                            </tr>
+                            <tr>
+                                <th>PASSWORD</th>
+                                <td><input type="password" name="password" value="<%= form.password %>"></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td><input type="submit" value="ログイン"></td>
+                            </tr>
+                        </table>
+                    </form>
+                    <p><a href="/record">&lt;&lt; Top へ戻る</a> | <a href="/add">アカウントの作成 &gt;&gt;</a></p>
+                </div>
+
+            <footer class="footer">
+                <p>&copy;COPYRIGHT MONKEY LIFT ALL RIGHTS RESERVED.</p>
+            </footer>
+        </div>
+    </body>
+</html>

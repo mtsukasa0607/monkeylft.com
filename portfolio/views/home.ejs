@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title><%= title %></title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+    <body>
+        <div class="wrapper">
+
+            <header class="header">
+                <h1 class="headline"><a href="/record">MONKEY LIFT</a></h1>
+            </header>
+
+
+        <div class="main" role="main">
+            <a class="logout" href="/logout">ログアウト</a>
+            <h2><%= title %></h2>
+            <h3><%= collection[0].relations.user.attributes.name %>'s Home</h3>
+            
+            <hr>
+            <table style="width:90%;">
+                <% for(var i in collection) { %>
+                    <%- include('data_item', {val:collection[i]}) %>
+                <% } %>
+            </table>
+            <p>
+                <% if(pagination.page > 1) { %>
+                    <span><a href="/home/<%= user_id %>/<%= pagination.page - 1 %>">&lt;&lt; Prev</a></span>
+                <% } else { %>
+                    <span>&lt;&lt; Prev</span>
+                <% } %>
+                |
+                <% if(pagination.page < pagination.pageCount) { %>
+                    <span><a href="/home/<%= user_id%>/<%= pagination.page + 1 %>">Next &gt;&gt;</a></span>
+                <% } else { %>
+                    <span>Next &gt;&gt;</span>
+                <% } %>
+            </p>
+            <p></p>
+            <p><a href="/record">&lt;&lt; Top</a></p>
+        </div>
+        <footer class="footer">
+            <p>&copy;COPYRIGHT MONKEY LIFT ALL RIGHTS RESERVED.</p>
+        </footer>
+        </div>
+    </body>
+</html>

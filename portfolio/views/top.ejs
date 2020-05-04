@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title><%= title %></title>
+        <link rel='stylesheet' href='/stylesheets/style.css'>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header class="header">
+                <h1 class="headline"><a href="/record">MONKEY LIFT</a></h1>
+            </header>
+
+            <div class="main" role="main">
+                <h3>Welcome to <%= title %> !!!</h3>
+                
+                <img src="/images/background.jpg" alt="" class="photo">
+                <h2>About</h2>
+                <p>このアプリでは、ウェイトトレーニング記録の管理ができます。<br>
+                    みんなのトレーニング状況も見ることができるので、モチベーションの維持に役立ちます。<br>
+                    さあ、MONKEY LIFT でトレーニングの記録を始めましょう。</p>
+                
+                <h2>Entry</h2>
+                <p>アカウントをお持ちの方はこちら</p>
+                <a href="/login"><button class="btn">Login</button></a>
+                <p>初めての方はこちら</p>
+                <a href="/add"><button class="btn">New Account</button></a>
+                <p>ビジターとしてログイン</p>
+                <a href="/login/?name=visitor&password=xxxxxxx"><button class="btn">Visitor</button></a>
+                <br>
+                <br>
+                <br>
+            </div>
+            <footer class="footer">
+                <p>&copy;COPYRIGHT MONKEY LIFT ALL RIGHTS RESERVED.</p>
+            </footer>
+        </div>
+    </body>
+</html>

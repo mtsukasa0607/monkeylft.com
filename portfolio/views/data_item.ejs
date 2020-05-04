@@ -1,0 +1,18 @@
+<% if(val != null) { %>
+    <tr>
+        <th style="width:100px;">
+            <a class="home" href="/home/<%= val.attributes.user_id %>/1">
+            <%= val.relations.user.attributes.name %></a>
+        </th>
+        <% let total = val.attributes.bp + val.attributes.dl + val.attributes.sq %>
+        <td><%= 'BP : ' + val.attributes.bp + 'kg' %></td>
+        <td><%= 'DL : ' + val.attributes.dl + 'kg' %></td>
+        <td><%= 'SQ : ' + val.attributes.sq + 'kg' %></td>
+        <td><%= 'TOTAL : ' + total + 'kg' %></td>
+        <%
+            let d = new Date(val.attributes.created_at);
+            let dstr = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+        %>
+        <td style="width:150px;"><%= dstr %></td>
+    </tr>
+<% } %>

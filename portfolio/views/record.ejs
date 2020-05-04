@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h1 class="headline"><a href="/record">MONKEY LIFT</a></h1>
+      </header>
+
+      <div class="main" role="main">
+        <a class="logout" href="/logout">ログアウト</a>
+        <h2><%= title %></h2>
+        <h3>Welcome to <%= login.name %> !!</h3>
+        
+        <hr>
+        <p>入力は半角数字、トレーニングしていない種目は0を入力して下さい。</p>
+        <form method="post" action="/record">
+          <table>
+            <tr><th>ベンチプレス : </th><td><input type="text" name="bp" size="50"></td></tr>
+            <tr><th>デッドリフト : </th><td><input type="text" name="dl" size="50"></td></tr>
+            <tr><th>　スクワット : </th><td><input type="text" name="sq" size="50"></td></tr>
+            <tr><th></th><td><input type="submit" value="送信"></td></tr>
+          </table>
+          
+        </form>
+        <hr>
+        <p>
+          <table style="width:95%;">
+            <% for(var i in collection) { %>
+              <%- include('data_item', {val:collection[i]}) %>
+            <% } %>
+          </table>
+        </p>
+        <p>
+          <% if(pagination.page > 1) { %>
+              <span><a href="/record/<%= pagination.page - 1 %>">&lt;&lt; Prev</a></span>
+            <% } else { %>
+              <span>&lt;&lt; Prev</span>
+          <% } %>
+          |
+          <% if(pagination.page < pagination.pageCount) { %>
+              <span><a href="/record/<%= pagination.page + 1 %>">Next &gt;&gt;</a></span>
+            <% } else { %>
+              <span>Next &gt;&gt;</span>
+          <% } %>
+        </p>
+      </div>
+
+      <footer class="footer">
+        <p>&copy;COPYRIGHT MONKEY LIFT ALL RIGHTS RESERVED.</p>
+      </footer>
+    </div>
+  </body>
+</html>
+
