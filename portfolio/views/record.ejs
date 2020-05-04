@@ -6,18 +6,15 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-
   <body>
     <div class="wrapper">
       <header class="header">
         <h1 class="headline"><a href="/record">MONKEY LIFT</a></h1>
       </header>
-
       <div class="main" role="main">
         <a class="logout" href="/logout">ログアウト</a>
         <h2><%= title %></h2>
         <h3>Welcome to <%= login.name %> !!</h3>
-        
         <hr>
         <p>入力は半角数字、トレーニングしていない種目は0を入力して下さい。</p>
         <form method="post" action="/record">
@@ -27,7 +24,6 @@
             <tr><th>　スクワット : </th><td><input type="text" name="sq" size="50"></td></tr>
             <tr><th></th><td><input type="submit" value="送信"></td></tr>
           </table>
-          
         </form>
         <hr>
         <p>
@@ -51,11 +47,9 @@
           <% } %>
         </p>
       </div>
-
       <footer class="footer">
         <p>&copy;COPYRIGHT MONKEY LIFT ALL RIGHTS RESERVED.</p>
       </footer>
     </div>
   </body>
 </html>
-

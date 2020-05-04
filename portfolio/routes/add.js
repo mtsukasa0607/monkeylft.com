@@ -5,16 +5,16 @@ let { check, validationResult } = require('express-validator');
 let knex = require('knex')({
   dialect: 'mysql',
   connection: {
-    host: 'portfoliodb.ckgrzxlyztye.ap-northeast-1.rds.amazonaws.com',
-    user: 'root',
-    password: 'myrdspassword',
-    database: 'my_expressapp_db',
+    host: '',
+    user: '',
+    password: '',
+    database: '',
     charset: 'utf8'
   }
 });
 
-var Bookshelf = require('bookshelf')(knex);
-var User = Bookshelf.Model.extend({ tableName: 'users' });
+let Bookshelf = require('bookshelf')(knex);
+let User = Bookshelf.Model.extend({ tableName: 'users' });
 
 router.get('/', (req, res, next) => {
     let data = {

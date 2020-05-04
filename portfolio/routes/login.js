@@ -3,10 +3,10 @@ let router = express.Router();
 let knex = require('knex')({
   dialect: 'mysql',
   connection: {
-    host: 'portfoliodb.ckgrzxlyztye.ap-northeast-1.rds.amazonaws.com',
-    user: 'root',
-    password: 'myrdspassword',
-    database: 'my_expressapp_db',
+    host: '',
+    user: '',
+    password: '',
+    database: '',
     charset: 'utf8'
   }
 });
@@ -81,6 +81,5 @@ router.get('/', (req, res, next) => {
     }
   }
 });
-
 
 module.exports = router;

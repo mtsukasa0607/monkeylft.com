@@ -3,10 +3,10 @@ let router = express.Router();
 let knex = require('knex')({
   dialect: 'mysql',
   connection: {
-    host: 'portfoliodb.ckgrzxlyztye.ap-northeast-1.rds.amazonaws.com',
-    user: 'root',
-    password: 'myrdspassword',
-    database: 'my_expressapp_db',
+    host: '',
+    user: '',
+    password: '',
+    database: '',
     charset: 'utf8'
   }
 });
@@ -33,7 +33,7 @@ router.get('/:id/:page', (req, res, next) => {
     pg *= 1;
     if(pg < 1){ pg = 1; }
     new Record().orderBy('created_at', 'DESC').where('user_id', '=', id).fetchPage({page:pg, pageSize:10, withRelated: ['user']}).then((collection) => {
-      var data = {
+      let data = {
           title: '個人の記録',
           login: req.session.login,
           user_id: id,
